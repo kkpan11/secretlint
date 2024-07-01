@@ -1,6 +1,6 @@
 {
   "name": "@secretlint/core",
-  "version": "8.1.2",
+  "version": "8.2.4",
   "description": "Core library for @secretlint.",
   "keywords": [
     "secretlint"
@@ -52,17 +52,17 @@
     "tabWidth": 4
   },
   "dependencies": {
-    "@secretlint/profiler": "^8.1.2",
-    "@secretlint/types": "^8.1.2",
-    "debug": "^4.3.4",
+    "@secretlint/profiler": "^8.2.4",
+    "@secretlint/types": "^8.2.4",
+    "debug": "^4.3.5",
     "structured-source": "^4.0.0"
   },
   "devDependencies": {
     "@types/debug": "^4.1.12",
-    "@types/mocha": "^10.0.6",
-    "@types/node": "^20.11.30",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "^20.14.8",
     "assert-json-equal": "^1.0.1",
-    "mocha": "^10.4.0",
+    "mocha": "^10.5.0",
     "prettier": "^2.8.1",
     "rimraf": "^3.0.2",
     "ts-node": "^10.9.2",

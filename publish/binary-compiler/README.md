@@ -1,20 +1,22 @@
 # @secretlint/binary-compiler
 
-A binary compiler for secretlint.
+Single executable binary compiler for secretlint using [Deno](https://deno.land/).
 
 ## CURRENT PROBLEM
 
 - output binary does not be code-sign.
 
-## Install
-
-Install with [npm](https://www.npmjs.com/):
-
-    npm install @secretlint/binary
-
 ## Usage
 
-- [ ] Write usage instructions
+```
+npm run dist
+./dist/secretlint --help
+```
+
+## Built-in
+
+- Recommended Rules
+- @secretlint/secretlint-formatter-sarif
 
 ## Changelog
 

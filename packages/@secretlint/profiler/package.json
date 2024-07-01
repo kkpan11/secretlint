@@ -1,6 +1,6 @@
 {
   "name": "@secretlint/profiler",
-  "version": "8.1.2",
+  "version": "8.2.4",
   "description": "Profile manager for Secretlint.",
   "keywords": [
     "secretlint"
@@ -20,6 +20,7 @@
     ".": {
       "import": {
         "types": "./module/node.d.ts",
+        "browser": "./module/browser.js",
         "default": "./module/node.js"
       },
       "default": "./module/node.js"
@@ -53,9 +54,9 @@
     "tabWidth": 4
   },
   "devDependencies": {
-    "@types/mocha": "^10.0.6",
-    "@types/node": "^20.11.30",
-    "mocha": "^10.4.0",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "^20.14.8",
+    "mocha": "^10.5.0",
     "prettier": "^2.8.1",
     "rimraf": "^3.0.2",
     "ts-node": "^10.9.2",

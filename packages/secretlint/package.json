@@ -1,6 +1,6 @@
 {
   "name": "secretlint",
-  "version": "8.1.2",
+  "version": "8.2.4",
   "description": "Secretlint CLI that scan secret/credential data.",
   "keywords": [
     "secretlint",
@@ -62,22 +62,22 @@
     "tabWidth": 4
   },
   "dependencies": {
-    "@secretlint/config-creator": "^8.1.2",
-    "@secretlint/formatter": "^8.1.2",
-    "@secretlint/node": "^8.1.2",
-    "@secretlint/profiler": "^8.1.2",
-    "debug": "^4.3.4",
+    "@secretlint/config-creator": "^8.2.4",
+    "@secretlint/formatter": "^8.2.4",
+    "@secretlint/node": "^8.2.4",
+    "@secretlint/profiler": "^8.2.4",
+    "debug": "^4.3.5",
     "globby": "^14.0.1",
     "meow": "^12.1.1",
     "read-pkg": "^8.1.0"
   },
   "devDependencies": {
-    "@secretlint/secretlint-rule-example": "^8.1.2",
-    "@secretlint/secretlint-rule-preset-recommend": "^8.1.2",
-    "@secretlint/types": "^8.1.2",
-    "@types/mocha": "^10.0.6",
-    "@types/node": "^20.11.30",
-    "mocha": "^10.4.0",
+    "@secretlint/secretlint-rule-example": "^8.2.4",
+    "@secretlint/secretlint-rule-preset-recommend": "^8.2.4",
+    "@secretlint/types": "^8.2.4",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "^20.14.8",
+    "mocha": "^10.5.0",
     "prettier": "^2.8.1",
     "rimraf": "^3.0.2",
     "ts-node": "^10.9.2",

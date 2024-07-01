@@ -1,44 +1,9 @@
-import { cli, run } from "secretlint/lib/cli";
-// workaround https://github.com/nexe/nexe/issues/711
-import fs from "fs";
-import path from "path";
-
-async function fsReaddir(dpath: string, opts: any = {}) {
-    const dirList: string[] = await new Promise((resolve, reject) => {
-        fs.readdir(dpath, (err, contents) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(contents);
-            }
-        });
-    });
-
-    if (opts.withFileTypes) {
-        const dirents = dirList.map((entName) => {
-            return new Promise((resolve, reject) => {
-                fs.stat(path.join(dpath, entName), (err, statObj) => {
-                    if (err) {
-                        reject(err);
-                    } else {
-                        // append name to stats object to behave like a dirent object
-                        resolve({
-                            name: entName,
-                            ...statObj,
-                        });
-                    }
-                });
-            });
-        });
-
-        return Promise.all(dirents);
-    }
-
-    return dirList;
-}
-
-fs.readdir = fsReaddir as any;
-// Entry Point
+// preload for embedded binary
+// TODO: use local file path instead of npm registry
+// https://github.com/denoland/deno/issues/18474
+import "npm:@secretlint/secretlint-rule-preset-recommend";
+import "npm:@secretlint/secretlint-formatter-sarif";
+import { cli, run } from "npm:secretlint/cli";
 run(cli.input, cli.flags).then(
     ({ exitStatus, stderr, stdout }) => {
         if (stdout) {
@@ -47,10 +12,10 @@ run(cli.input, cli.flags).then(
         if (stderr) {
             console.error(stderr);
         }
-        process.exit(exitStatus);
+        Deno.exit(exitStatus);
     },
     (error) => {
         console.error(error);
-        process.exit(1);
+        Deno.exit(1);
     }
 );

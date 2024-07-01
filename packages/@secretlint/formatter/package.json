@@ -1,6 +1,6 @@
 {
   "name": "@secretlint/formatter",
-  "version": "8.1.2",
+  "version": "8.2.4",
   "description": "A formatter collection for Secretlint.",
   "homepage": "https://github.com/secretlint/secretlint/tree/master/packages/@secretlint/formatter/",
   "bugs": {
@@ -20,6 +20,10 @@
         "default": "./module/index.js"
       },
       "default": "./module/index.js"
+    },
+    "./module/": {
+      "import": "./module/",
+      "types": "./module/"
     },
     "./package.json": "./package.json"
   },
@@ -50,12 +54,12 @@
     "tabWidth": 4
   },
   "dependencies": {
-    "@secretlint/types": "^8.1.2",
+    "@secretlint/types": "^8.2.4",
     "@textlint/linter-formatter": "^12.6.1",
     "@textlint/module-interop": "^13.4.1",
     "@textlint/types": "^12.6.1",
     "chalk": "^4.1.2",
-    "debug": "^4.3.4",
+    "debug": "^4.3.5",
     "is-file": "^1.0.0",
     "pluralize": "^8.0.0",
     "strip-ansi": "^6.0.1",
@@ -64,11 +68,11 @@
     "try-resolve": "^1.0.1"
   },
   "devDependencies": {
-    "@types/mocha": "^10.0.6",
-    "@types/node": "^20.11.30",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "^20.14.8",
     "@types/pluralize": "0.0.33",
     "escape-string-regexp": "^4.0.0",
-    "mocha": "^10.4.0",
+    "mocha": "^10.5.0",
     "prettier": "^2.8.1",
     "rimraf": "^3.0.2",
     "ts-node": "^10.9.2",

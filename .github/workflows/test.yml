@@ -4,10 +4,11 @@ on:
     branches-ignore:
       - gh-pages
   pull_request:
-env:
-  CI: true
 permissions:
   contents: read
+env:
+  TURBO_TELEMETRY_DISABLED: 1
+  DO_NOT_TRACK: 1
 jobs:
   hadolint:
     runs-on: macos-latest
@@ -26,6 +27,10 @@ jobs:
       matrix:
         os: [ macos-latest, windows-latest, ubuntu-latest ]
         node-version: [ 18, 20 ]
+        # but exclude macOs x node 18
+        exclude:
+          - os: macos-latest
+            node-version: 18
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -36,4 +41,8 @@ jobs:
       - name: Install
         run: yarn install
       - name: Test
-        run: yarn ci
+        run: yarn ci -v
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
